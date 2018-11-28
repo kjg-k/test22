@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+ 
+
+ 
+<button onclick="myFunction()">Try it</button>
+ 
+<p id="demo"></p>
+ 
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits;
+ 
+function myFunction() {   
+    //fruits[fruits.length-1] = "Kiwi";
+    	// 덮어쓰기
+    fruits[fruits.length] = "Kiwi";
+    //fruits[0] = "Kiwi";
+    
+    document.getElementById("demo").innerHTML = fruits;
+}
+</script>
+ 
+</body>
+</html>

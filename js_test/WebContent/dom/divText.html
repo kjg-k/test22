@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+function show() {
+	var parentdiv = document.getElementById("textHolder");
+	var divel = document.createElement("div");
+	divel.appendChild(document.createTextNode("CBD Developer 8"));
+	parentdiv.appendChild(divel);
+}
+
+function del() {
+	var parentdiv = document.getElementById("textHolder");
+	var divel = parentdiv.lastChild;
+	
+	if (divel) {
+		parentdiv.removeChild(divel);
+	}
+}
+</script>
+
+</head>
+<body>
+
+<input type="button" onclick="show()" value="텍스트 추가">
+<input type="button" onclick="del()" value="텍스트 삭제">
+<div id="textHolder"></div>
+
+</body>
+</html>

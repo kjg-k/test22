@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="../ajax/httpRequest.js"></script>
+<script type="text/javascript">
+window.onload = function() {
+	sendRequest("member.jsp", "", viewInfo, "get");
+}
+
+function viewInfo() {
+	if (httpRequest.readyState == 4) {
+		if (httpRequest.status == 200) {
+			var result = JSON.parse(httpRequest.responseText);
+			
+			if (result.code == "success") {
+				var m = result.data.member;
+				
+				for (i=0; i<m.length; i++) {
+					alert(m[i].id + " [" + m[i].name + "] " + m[i].sno);
+				}
+			}
+			else {
+				alert("실패");
+			}
+		}
+		else {
+			alert("에러 발생 : " + httpRequest.status);
+		}
+	}
+}
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+.greenText {
+    PADDING-RIGHT: 0px; 
+    PADDING-LEFT: 0px; 
+    PADDING-BOTTOM: 4px; 
+    MARGIN: 0px; 
+    FONT: bold italic 26px/26px Georgia, serif; 
+    COLOR: #7e9e50; 
+    PADDING-TOP: 0px; 
+    
+}
+ 
+.redText {
+    PADDING-RIGHT: 0px; 
+    PADDING-LEFT: 0px; 
+    PADDING-BOTTOM: 4px; 
+    MARGIN: 0px; 
+    FONT: bold italic 26px/26px Georgia, serif; 
+    COLOR: #FF493f; 
+    PADDING-TOP: 0px; 
+    
+}
+ 
+.hide {
+    DISPLAY:NONE;
+}
+</style>
+
+<script type="text/javascript">
+function cssapply(cssName) {
+	document.getElementById("content").className = cssName;
+}
+</script>
+
+</head>
+<body>
+
+<div id="content">
+JAVA-MySQL, JSP-Oracle, MVC-Struts, OJT
+</div>
+
+<input type="button" onclick="cssapply('greenText')" 
+	   value="CSS 적용 1(녹색 테스트)">
+<input type="button" onclick="cssapply('redText')" 
+	   value="CSS 적용 2(적색 테스트)">
+<input type="button" onclick="cssapply('hide')" 
+	   value="CSS 적용 3(감추기)">
+
+</body>
+</html>

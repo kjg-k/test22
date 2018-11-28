@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+function sleep(ms) {
+	var startTime = new Date().getTime();
+	
+	while (new Date().getTime() < startTime+ms);
+}
+
+function callNotWorker() {
+	sleep(10000);
+	alert("10초 후");
+}
+</script>
+
+</head>
+<body>
+
+<button onclick="callNotWorker()">워커 없이 호출</button>
+<br>
+<input type="text">
+
+</body>
+</html>

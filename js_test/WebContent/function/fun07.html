@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="./utility.js"></script>
+
+</head>
+<body>
+
+<script type="text/javascript">
+var temp;
+
+temp = prompt("값을 입력하세요", 100.5);
+//temp = prompt("값을 입력하세요", "100.5");
+	// 숫자 형태는 ""로 감싸도 숫자로 인식됨
+
+if (isNaN(temp)) {
+	pl(temp + "은 문자임");
+}
+else {
+	pl(temp + "은 숫자임");
+}
+</script>
+
+</body>
+</html>

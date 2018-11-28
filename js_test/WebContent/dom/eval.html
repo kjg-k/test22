@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+function changeName() {
+	var tag = document.getElementById("name");
+	
+	tag.innerHTML = "나길동";
+}
+
+function changePay() {
+	var tag = document.getElementById("pay");
+	var pay = eval(tag.innerHTML) + 100000;
+	
+	tag.innerHTML = pay;
+}
+</script>
+
+</head>
+<body>
+
+<h2>
+<span id="name">가길동</span>
+<input type="button" value="이름 변경" onclick="changeName()">
+<br><br>
+<div id="pay">1500000</div>
+<input type="button" value="급여 변경" onclick="changePay()">
+</h2>
+
+</body>
+</html>

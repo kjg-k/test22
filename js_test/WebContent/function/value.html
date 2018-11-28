@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+var oldVal = "";
+var newVal = "";
+
+function ok(f) {
+	if (oldVal=="" && newVal=="") {
+		newVal = f.keyword.value;
+	}
+	else if (f.keyword.value == "") {
+		return;
+	}
+	else {
+		oldVal = newVal;
+		newVal = f.keyword.value;
+	}
+	
+	var divTag = document.getElementById("panel");
+		// element는 태그로 생각하면 됨
+		// 이 페이지 내의 id가 panel인 태그를 divTag에 할당
+	var str = "oldVal : " + oldVal + " / newVal : " + newVal;
+	
+	divTag.innerHTML = divTag.innerHTML + "<br>" + str;
+		// 해당 HTML의 divTag 값에 <br>과 str값을 더해줌
+		// body의 마지막 <div>에, 한줄 띄고 str값이 입력됨
+}
+</script>
+
+</head>
+<body>
+
+<form name="frm" method="post">
+ <input type="text" name="keyword" style="width:90%">
+ 
+ <input type="button" name="btnOK" value="확인" onclick="ok(this.form);">
+ 
+</form>
+
+<div id="panel" class="abc" style="font-size:24px"></div>
+</body>
+</html>

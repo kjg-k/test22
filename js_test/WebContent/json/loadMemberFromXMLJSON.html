@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="../ajax/httpRequest.js"></script>
+<script type="text/javascript">
+window.onload = function() {
+	sendRequest("member_xmljson.xml", "", viewInfo, "get");
+}
+
+function viewInfo() {
+	if (httpRequest.readyState == 4) {
+		if (httpRequest.status == 200) {
+			var docXML = httpRequest.responseXML;
+			var code = docXML.getElementsByTagName("code")
+					.item(0).firstChild.nodeValue;
+			
+			if (code == "success") {
+				var dataJSON = docXML.getElementsByTagName("data")
+							.item(0).firstChild.nodeValue;
+				var data = eval("(" + dataJSON + ")");
+				
+				alert(data.name + "[" + data.id + "]");
+			}
+			else {
+				alert("실패");
+			}
+		}
+		else {
+			alert("에러 발생 : " + httpRequest.status);
+		}
+	}
+}
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

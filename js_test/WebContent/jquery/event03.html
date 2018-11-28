@@ -1,0 +1,24 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("img").mouseover(function() {
+			// 마우스를 갖다대면 이 함수 실행
+		$(this).attr("src","images/sea.jpg");
+	}).mouseout(function() {
+		// 마우스를 떼면 이 함수 실행
+		$(this).attr("src","images/flower.jpg");
+	});
+});
+</script>
+</head>
+<body>
+
+<img src="images/flower.jpg" alt="꽃" />
+
+</body>
+</html>

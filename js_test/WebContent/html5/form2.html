@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form>
+ <ul type="none">
+  <li>
+   <h2>예약 변경 날짜와 질문 등록</h2>
+  </li>
+  <li>
+   <label>이름 : </label>
+   <input type="text" placeholder="홍길동" required>
+  </li>
+  <li>
+   <label>e-mail : </label>
+   <input type="email" placeholder="dominica@a.com" required>
+  </li>
+  <li>
+   <label>홈페이지 : </label>
+   <input type="url" placeholder="http://dominica.com" required pattern="http|https)://.+">
+  </li>
+  <li>
+   <label>변경 날짜와 시간 : </label>
+   <input type="datetime" required>
+  </li>
+  <li>
+   <label>질문 내용 : </label>
+   <textarea rows="30" cols="30" required></textarea>
+  </li>
+  <li>
+   <button type="submit">등록</button>
+  </li>  
+ </ul>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="demo.jsp" id="form1" method="post">
+  First name:<input type="text" name="fname" placeholder="First name" required autofocus><br>
+   비번:<input type="password" name="fname" placeholder="비밀번호 입력" required><br>
+   번호:  <input type="number" name="points" step="3"><br>
+   	<!-- 숫자가 3단위로 올라감 -->
+  E-mail: <input type="email" name="userid" placeholder="이메일을 입력하세요"><br>
+  
+ <P>
+  Enter a date before 1980-01-01:
+  <input type="date" name="bday" max="1979-12-31"><br>
+ 
+  Enter a date after 2000-01-01:
+  <input type="date" name="bday" min="2000-01-02"><br>
+ 
+  Quantity (between 1 and 5):
+  <input type="number" name="quantity" min="1" max="5"><br>
+ 
+ </P>
+ Select images: <input type="file" name="img" multiple><br>
+ Country code: <input type="text" name="country_code" pattern="[A-Za-z]{3}" title="요청한 형식과 일치시키세요"><br>
+ 	<!-- 영어로만 입력 가능 -->
+ 
+  <input type="submit">
+  <input type="submit" formaction="demo_admin.jsp" value="Submit as admin">
+  <input type="submit" formenctype="multipart/form-data"
+  value="Submit as Multipart/form-data">
+  <input type="submit" formmethod="get" formaction="demo_get.jsp"
+  value="Submit using get">
+  <input type="submit" formnovalidate value="Submit without validation">
+  <input type="submit" formtarget="_blank"
+  value="Submit to a new window">
+   <input type="image" src="img_submit.gif" alt="Submit" width="48" height="48">
+ 
+</form>
+ 
+ 
+<p><strong>Note:</strong> The autofocus attribute of the input tag is not supported in Internet Explorer 9 and earlier versions.</p>
+ 
+<p>아래의 Last name 필드는 양식 요소를 벗어나지 만 여전히 양식의 일부.</p>
+Last name: <input type="text" name="lname" form="form1"><br>
+</body>
+</html>

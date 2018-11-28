@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="./httpRequest.js"></script>
+<script type="text/javascript">
+function send(id, passwd) {
+	log("send() 함수 호출");
+	log("ID: " + id + "    PASSWD : " + passwd);
+	
+	var params = "id=" + encodeURIComponent(id);
+	log("params : " + params);
+	params += "&passwd=" + encodeURIComponent(passwd);
+	
+	var newsList = document.getElementById("payList");
+	newsList.innerHTML = "";
+	
+	sendRequest("pay.jsp", params, response, "post");
+}
+
+function response() {
+	if (httpRequest.readyState == 4) {
+		if (httpRequest.status == 200) {
+			var payList = document.getElementById("payList");
+			
+			payList.innerHTML = httpRequest.responseText;
+		}
+		else {
+			alert(httpRequest.status);
+		}
+	}
+}
+</script>
+
+<style type="text/css">
+.style9 {
+	font-size: 16;
+}
+
+div#debugConsole {
+	border: 1px solid #000000;
+	color: #00ff00;
+	background: #000000;
+}
+
+table {
+	width: 790;
+	border: 1;
+	align: center;
+	cellpadding: 5;
+}
+</style>
+
+</head>
+<body>
+
+<div id="debugConsole"></div>
+
+<table>
+ <tr>
+  <td height="34" align="center">
+   <span class="style9"> 급여 명세서 </span>
+  </td>
+ </tr>
+ <tr>
+  <td height="61">
+   <div id="payList"></div>
+   <br>
+   
+   <form name="news">
+   	급여 확인 로그인 : 
+    <br><br>
+      사원 ID : &nbsp;
+    <input type="text" name="id" value="test">
+      패스워드 :
+    <input type="password" name="passwd" value="1234">
+    
+    <input type="button" name="cmdRefresh" value="급여 확인" 
+    	   onclick="send(this.form.id.value, this.form.passwd.value)">
+   </form>
+  </td>
+ </tr> 
+</table>
+
+</body>
+</html>

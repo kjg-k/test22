@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function ban(f) {
+	var str = f.content.value;
+	
+	while(true) {
+		if (str.indexOf("가을") != -1) {
+			str = str.replace("가을", "XX");
+		}
+		else {
+			break;
+		}		
+	}
+	
+	document.getElementById("panel").innerHTML = str;
+	
+}
+</script>
+
+</head>
+<body>
+
+<form name="frm">
+ <textarea name="content" rows="15" cols="40"></textarea>
+
+ <input type="button" value="금지어 적용" onclick="ban(this.form)">
+</form>
+
+<p id="panel"></p>
+
+</body>
+</html>

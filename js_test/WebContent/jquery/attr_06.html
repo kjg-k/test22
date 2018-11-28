@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>속성 셀렉터</title>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("[title*='ir']").css("color", "red");
+			// 속성 title 중 value에 ir이 포함된 것
+	});
+</script>
+</head>
+<body>
+	<ul>
+		<li title="first">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li title="second">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li title="third">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li title="fourth">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+	</ul>
+</body>
+</html>

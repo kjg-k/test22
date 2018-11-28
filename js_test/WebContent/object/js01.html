@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<p id="demo"></p>
+
+<script type="text/javascript">
+var person = {
+		firstName : "first",
+		lastName : "last",
+		age : 50,
+		eyeColor : "blue"
+};
+
+document.getElementById("demo").innerHTML =
+	person.firstName + " is " + person.age + " years old<br>";
+document.getElementById("demo").innerHTML += 
+	person["lastName"] + "'s eyecolor is " + person["eyeColor"];
+</script>
+
+</body>
+</html>

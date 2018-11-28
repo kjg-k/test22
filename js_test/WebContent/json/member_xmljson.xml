@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<result>
+ <code>success</code>
+ <data><![CDATA[
+ {
+  name:"최범균",
+  id:"MVC Model 2",
+  sno:"GM-0001"
+ }
+ ]]></data>
+</result>

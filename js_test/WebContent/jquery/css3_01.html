@@ -1,0 +1,32 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("#second ~ li").css("color","red");
+		// id가 second인 태그 뒤의 모든 태그에 css적용
+		// 단, 다른 상위 태그를 만나고부터 적용 불가
+		// '~'는 '틸드'라고 읽음
+});
+</script>
+</head>
+<body>
+
+<ul>
+ <li id="first"> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+ <li id="second"> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+ <li id="third"> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+ <li id="fourth"> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+ <li id="fourth"><div> 텍스트 텍스트 텍스트 텍스트 텍스트 </div></li> 
+</ul>
+<ul>
+ <li> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+</ul>
+<p> 텍스트 텍스트 텍스트 텍스트 텍스트 </p>
+
+
+</body>
+</html>

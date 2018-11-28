@@ -1,0 +1,43 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("a:eq(0)").click(function() {
+		$("img").attr("src","images/flower.jpg").attr("alt","꽃");
+			// alt: 만약 이미지가 깨질 때 "꽃"을 띄움 
+		return false;
+			// 원래 a(앵커)태그로 이동하면 해당 주소로 이동이 되는데,
+			// 그 것을 방지해주는 것
+	});
+	$("a:eq(1)").click(function() {
+		$("img").attr("src","images/sea.jpg").attr("alt","바다");
+		return false;
+	});
+	$("a:eq(2)").click(function() {
+		$("img").attr("src","images/Jellyfish.jpg").attr("alt","해파리");
+		return false;
+	});
+	$("a:eq(3)").click(function() {
+		$("img").attr("src","images/building.jpg").attr("alt","건물");
+		return false;
+	});
+});
+</script>
+</head>
+<body>
+
+<ul>
+ <li><a href="images/flower.jpg">꽃</a></li>
+ <li><a href="images/sea.jpg">바다</a></li>
+ <li><a href="images/Jellyfish.jpg">해파리</a></li>
+ <li><a href="images/building.jpg">건물</a></li>
+</ul>
+
+<p><img src="images/flower.jpg" alt="꽃" /></p>
+
+</body>
+</html>

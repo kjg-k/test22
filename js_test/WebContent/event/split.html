@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+function searchW() {
+	var str = "기획자/설계자/개발자/디자이너";
+	var strout = "";
+	
+	var strSplit = str.split("/");
+	alert("추출된 문자열 개수 : " + strSplit.length);
+	
+	for (i=0; i<strSplit.length; i++) {
+		strout += "▶ " + strSplit[i] + " ";
+	}
+	
+	var panel = document.getElementById("panel");
+	panel.innerHTML += "<br><br>" + strout;
+}
+</script>
+
+</head>
+<body onload="searchW()">
+
+<div id="panel">
+종각부터 시청역 구간의 열차가 연착되고 있습니다.<br>
+</div>
+
+</body>
+</html>

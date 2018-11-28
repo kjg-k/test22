@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="./utility.js"></script>
+</head>
+<body>
+
+<h2>성적 처리</h2>
+<br><hr>
+
+
+<table style="width:50%" border="1">
+ <tr>
+  <th>점수</th>
+ </tr>
+
+<script type="text/javascript">
+var kuk = prompt("국어 점수를 입력하세요", 0);
+var eng = prompt("영어 점수를 입력하세요", 0);
+var math = prompt("수학 점수를 입력하세요", 0);
+
+var sum = parseInt(kuk) + parseInt(eng) + parseInt(math);
+var avg = sum / 3;
+p("<tr><td>국어 : " + kuk + "</td></tr>");
+p("<tr><td>영어 : " + eng + "</td></tr>");
+p("<tr><td>수학 : " + math + "</td></tr>");
+p("<tr><td>총점 : " + sum + "</td></tr>");
+p("<tr><td>평균 : " + avg + "</td></tr>");
+p("<tr><td>평가 : ");
+
+for (var i=0; i<avg/10; i++) {
+	p("★");
+}
+
+p("</td></tr>");
+</script>
+
+</table>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="./httpRequest.js"></script>
+<script type="text/javascript">
+function sendS(f) {
+	var params = "num=" + f.season.selectedIndex;		
+	var url = "./vacation_proc.jsp";
+			
+	var recommand = document.getElementById("recommand");
+	recommand.innerHTML = "";
+			
+	sendRequest(url, params, response1, "get");
+}
+
+function sendR() {
+	var params = "name=" + this.value;
+	var url = "./vacation_detail.jsp";
+		
+	var detail = document.getElementById("detail");
+	detail.innertHTML = "";
+		
+	sendRequest(url, params, response2, "get");
+}
+
+function response1() {
+	if (httpRequest.readyState == 4) {
+		if (httpRequest.status == 200) {
+			var recommand = document.getElementById("recommand");
+			var source = httpRequest.responseText;	
+			var strSp = source.split(",");
+			
+			for (i=0; i<strSp.length; i++) {
+				var radio = document.createElement("input");
+				radio.type = "radio";
+				radio.name = "recom";
+				radio.onclick = sendR;
+				radio.value = strSp[i];
+				
+				recommand.appendChild(radio);
+				recommand.appendChild(document.createTextNode(strSp[i].trim()));
+				recommand.appendChild(document.createElement("br"));
+			}						
+		}
+	}
+}
+
+function response2() {
+	if (httpRequest.readyState == 4) {
+		if (httpRequest.status == 200) {
+			var detail = document.getElementById("detail");		
+			var source = httpRequest.responseText;	
+			
+			detail.innerHTML = document.frm.recom.value + "에 대한 정보가 새 창으로 보여집니다.";
+			
+			window.open(source, "백과", "width=500,height=700");					
+		}
+	}
+}
+</script>
+</head>
+<body>
+
+<form name="frm">
+<select name="season" onchange="sendS(this.form)">
+ <option>계절을 선택하세요</option>
+ <option>봄</option>
+ <option>여름</option>
+ <option>가을</option>
+ <option>겨울</option> 
+</select>
+
+<div id="recommand"></div>
+
+<div id="detail"></div>
+</form>
+
+</body>
+</html>

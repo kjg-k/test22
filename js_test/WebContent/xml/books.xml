@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type="text/xsl" href="books.xsl" ?>
+
+<books>
+ <book>
+  <title><![CDATA[Head First HTML with CSS & XHTML]]></title>
+  <author>author</author>
+ </book>
+ <book>
+  <title>title2</title>
+  <author>author2</author>
+ </book>
+ <book>
+  <title>title3</title>
+  <author>author3</author>
+ </book>
+</books>

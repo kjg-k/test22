@@ -1,0 +1,31 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<style type="text/css">
+p {
+	color: red
+}
+</style>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("p#first").prepend("<strong>앞 부분에 삽입</strong>");
+		// 해당 태그 안의 앞에 삽입
+	$("p#first").append("<strong>뒷부분에 삽입</strong>");
+		// 해당 태그 안의 뒤에 삽입
+	$("p#second").before("<h1>태그 앞에 삽입</h1>");
+		// 해당 태그 앞에 삽입
+	$("p#second").after("<h1>태그 뒤에 삽입</h1>");
+		// 해당 태그 뒤에 삽입
+})
+</script>
+</head>
+<body>
+
+<p id="first"> 텍스트 텍스트</p>
+<p id="second"> 텍스트 텍스트</p>
+
+</body>
+</html>

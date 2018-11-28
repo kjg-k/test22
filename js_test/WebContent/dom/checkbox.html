@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+function check() {
+	document.getElementById("chkLCD").checked = true;
+}
+
+function uncheck() {
+	document.getElementById("chkLCD").checked = false;
+}
+
+function check2(id) {
+	document.getElementById(id).checked = true;
+}
+
+function uncheck2(id) {
+	document.getElementById(id).checked = false;
+}
+
+function getOption() {
+	var lcd = document.getElementById("chkLCD");
+	var ram = document.getElementById("chkRAM");
+	var printer = document.getElementById("chkPrinter");
+	var str = "";
+
+	if (lcd.checked == true) {
+		str = lcd.value + " ";
+	}
+	
+	if (ram.checked == true) {
+		str += ram.value + " ";
+	}
+	
+	if (printer.checked == true) {
+		str += printer.value + " ";
+	}
+	
+	document.getElementById("opt").value = str;
+}
+</script>
+
+</head>
+<body>
+
+<form>
+ <p>상품 옵션 선택</p>
+ <p>
+  <input type="checkbox" id="chkLCD" value="LCD 24">
+  <input type="button" onclick="check()" value="LCD 24 선택">
+  <input type="button" onclick="uncheck()" value="LCD 24 선택 안 함">
+ </p>
+ <p>
+  <input type="checkbox" id="chkRAM" value="RAM 2G">
+  <input type="button" onclick="check2('chkRAM')" value="RAM 2G 선택">
+  <input type="button" onclick="uncheck2('chkRAM')" value="RAM 2G 선택 안 함">
+ </p>
+ <p>
+  <input type="checkbox" id="chkPrinter" value="프린터">
+  <input type="button" onclick="check2('chkPrinter')" value="프린터 선택">
+  <input type="button" onclick="uncheck2('chkPrinter')" value="프린터 선택 안 함">
+ </p>
+ <p>
+  <input type="button" name="btnOpt" value="선택한 옵션" onclick="getOption()">
+  <input type="text" id="opt" size="40">
+ </p>
+</form>
+
+</body>
+</html>

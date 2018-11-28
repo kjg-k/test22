@@ -1,0 +1,21 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("input").val(" 입력해 주세요").css("color","#CCC").one("focus", function() {
+		$(this).val("").css("color","#000");
+	});
+		// 이렇게 하면 focus에 의해서 함수가 발동되는 것은 딱 한 번 뿐임
+})
+</script>
+</head>
+<body>
+
+이름：<input type="text" value="">
+
+</body>
+</html>

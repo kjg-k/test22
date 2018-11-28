@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="../ajax/httpRequest.js"></script>
+<script type="text/javascript">
+var xmlDoc = null;
+var xslDoc = null;
+
+function loaded() {
+	sendRequest("teaminfo.xml", null, teaminfoXML, "get");
+}
+
+function teaminfoXML() {
+	if (httpRequest.readyState == 4) {
+		if (httpRequest.status == 200) {
+			xmlDoc = httpRequest.responseXML;
+			
+			var test = xmlDoc.getElementsByTagName("team");
+			alert(test[0].getElementsByTagName("name").item(0).firstChild.nodeValue);
+			
+			sendRequest("teaminfo.xsl", null, teaminfoXSL, "get");
+		}
+	}
+}
+
+function teaminfoXSL() {
+	if (httpRequest.readyState == 4) {
+		if (httpRequest.status == 200) {
+			xslDoc = httpRequest.responseXML;
+			
+			var test = xslDoc.getElementsByTagName("team");
+			alert(test[0]);
+			//alert(test[0].getElementsByTagName("name").item(0).firstChild);
+						
+			doXSLT();
+		}
+	}
+}
+
+function doXSLT() {
+	if (xmlDoc==null || xslDoc==null) {
+		return;
+	}
+	
+	var p = document.getElementById("p");
+	
+	if (window.ActiveXObject) {
+		p.innerHTML = xmlDoc.transformNode(xslDoc);
+	}
+	else {
+		var xsltProc = new XSLTProcessor();
+		
+		xsltProc.importStylesheet(xslDoc);
+		var fragment = xsltProc.transformToFragment(xmlDoc, document);
+		
+		p.appendChild(fragment);
+	}
+}
+
+window.onload = function() {
+	loaded();
+}
+
+</script>
+
+</head>
+<body>
+
+<div id="p"></div>
+
+</body>
+</html>

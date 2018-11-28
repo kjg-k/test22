@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>복수속성 셀렉터</title>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("[title^='f'][title*='th']").css("color", "red");
+			// f로 시작하면서 th를 포함하고 있는 것
+	});
+</script>
+</head>
+<body>
+	<ul>
+		<li title="first">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li title="second">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li title="third">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li title="fourth">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+	</ul>
+</body>
+</html>

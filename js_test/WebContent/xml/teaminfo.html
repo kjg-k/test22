@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="../ajax/httpRequest.js"></script>
+<script type="text/javascript">
+function loaded() {
+	sendRequest("teaminfo.xml", null, response, "get");
+}
+
+function response() {
+	if (httpRequest.readyState == 4) {
+		if (httpRequest.status == 200) {
+			var resp = httpRequest.responseXML;
+			var teamList = resp.getElementsByTagName("team");
+						
+			var p = document.getElementById("p");
+			
+			var table = document.createElement("table");
+			table.border = "1";
+			p.appendChild(table);	
+			
+			table.innerHTML += "<tr><td>이름</td><td>전화번호</td><td>주소</td></tr>";
+			
+			for (var i=0; i<teamList.length; i++) {
+				var tr = document.createElement("tr");
+				table.appendChild(tr);				
+				
+				var team = teamList[i];
+				
+				var info = [
+					team.getElementsByTagName("name").item(0).firstChild.nodeValue,
+					team.getElementsByTagName("phone").item(0).firstChild.nodeValue,
+					team.getElementsByTagName("address").item(0).firstChild.nodeValue
+				];
+							
+				for (var j=0; j<info.length; j++) {
+					var td = document.createElement("td");
+					tr.appendChild(td);	
+					td.innerHTML = info[j];
+				}
+			}	
+		}
+	}
+}
+
+window.onload = function() {
+	loaded();
+}
+
+</script>
+
+</head>
+<body>
+
+<div id="p"></div>
+
+</body>
+</html>

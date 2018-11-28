@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+ 
+<p>The splice() methods can be used to remove array elements.</p>
+ 
+<button onclick="myFunction()">Try it</button>
+ 
+<p id="demo"></p>
+ 
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits;
+function myFunction() {
+    fruits.splice(0, 1);
+    	// 0번 인덱스부터 1개 인덱스 지움
+    	// ->> 0번 인덱스만 지워지고, 1번은 다시 0번으로 재부여
+    document.getElementById("demo").innerHTML = fruits;
+}
+</script>
+ 
+</body>
+</html>

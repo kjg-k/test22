@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+ 
+
+ 
+<button onclick="remove()">제거</button>
+<button onclick="add()">추가</button>
+ 
+<p id="demo"></p>
+ 
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits;
+ 
+function remove() {
+	document.getElementById("demo").innerHTML = fruits.shift();
+}
+function add() {
+	document.getElementById("demo").innerHTML = fruits.unshift("Kiwi");
+}
+</script>
+ 
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<p id="demo"></p>
+
+<script type="text/javascript">
+function Person(first, last, age, eye) {
+	this.firstName = first;
+	this.lastName = last;
+	this.age = age;
+	this.eyeColor = eye;
+}
+
+var myFather = new Person("John", "Doe", 50, "blue");
+var myMother = new Person("Sally", "Rally", 48, "green");
+
+document.getElementById("demo").innerHTML = 
+	"My father is " + myFather.age +
+	", My mother is " + myMother.age + "<br>";
+	
+
+
+document.getElementById("demo").innerHTML += 
+	"<br>My father is " + myFather.nationality +
+	", My mother is " + myMother.nationality;
+	
+myFather.nationality = "English";
+	// 객체 생성 이후에도 속성 추가 가능
+myFather.name = function() {
+	return this.firstName + " " + this.lastName;
+}
+	// 객체 생성 이후에도 메소드 추가 가능	
+	
+document.getElementById("demo").innerHTML += 
+	"<br>My father is " + myFather.name();
+
+</script>
+
+</body>
+</html>

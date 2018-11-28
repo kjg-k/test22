@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="./utility.js"></script>
+
+</head>
+<body>
+
+<script type="text/javascript">
+var temp1, temp2;
+
+temp1 = prompt("수식을 입력하세요", "(10+20)/2");
+	// '(10+20)/2'라는 문자열
+	// ""로 감싸도 문자가 들어가 있기 때문에 숫자로 인식하지 않고 문자열로 인식
+
+temp2 = "계산 결과는 " + eval(temp1) + "입니다.";
+	// eval() 문자열이 명령어로 전환
+	// 문자열을 스크립트로 형 변환
+	// ->> 연산 가능 숫자로 변경
+pl("temp2 : " + temp2);
+</script>
+
+</body>
+</html>

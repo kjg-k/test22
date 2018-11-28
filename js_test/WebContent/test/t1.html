@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+ 
+// 함수명을 문자열로 전달받아 변환하여 호출합니다.
+function test(_func){
+    // alert("func: " + func); return;
+var func = eval(_func); // 문자열을 함수로 변환
+    func.call(); 
+}
+ 
+// red 함수를 호출합니다. 함수를 변수에 할당 할 수 있습니다.
+function func2(){
+var func = red;  
+func.call();
+}
+ 
+// green 함수를 호출합니다. 함수를 변수에 할당 할 수 있습니다.
+function func3(){
+    var func = green; 
+    func.call();
+}
+ 
+ 
+function red(){
+alert('Red 함수가 호출되었습니다.');
+}
+ 
+function green(){
+    alert('Green 함수가 호출되었습니다.');
+}
+ 
+function blue(){
+    alert('Blue 함수가 호출되었습니다.');
+}
+ 
+ 
+</script>
+ 
+</head>
+<body>
+<table width="500" height="200" align="center" border="5"> 
+<tr>
+<td>
+<form name="frmTest">
+    호출하고 싶은 함수명을 입력하세요.<br><br>
+<input type="text" name="funcName" size="50" />
+    <input type="button" name="btnFunction" 
+            onclick="test(this.form.funcName.value)" value="함수 호출" />
+ 
+    <input type="button" name="btnFunction2" 
+            onclick="func2()" value="red 함수 호출" />
+    <input type="button" name="btnFunction3" 
+            onclick="func3()" value="green 함수 호출" />
+    
+</form>
+</td></tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form id="frm1" action="form_action.asp">
+first name : 
+ <input type="text" name="fname" value="Donald">
+ <br>
+last name : 
+ <input type="text" name="lname" value="Duck">
+ <br><br>
+ <input type="submit" value="submit">
+</form>
+
+<p>test1</p>
+
+<button onclick="myFunction()">Try</button>
+
+<p id="demo"></p>
+
+<script type="text/javascript">
+function myFunction() {
+	var x = document.forms["frm1"];
+		// forms["name"]
+		// 페이지 내의 모든 form들 중 name이 "name"인 것
+	var text = "";
+	var i;
+	
+	for (i=0; i<x.length; i++) {
+		text += x.elements[i].value + "<br>";
+	}
+	
+	document.getElementById("demo").innerHTML = text;
+}
+</script>
+
+</body>
+</html>

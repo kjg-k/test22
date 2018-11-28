@@ -1,0 +1,27 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("li span:only-child").css("color","red");
+		// 오직 span태그 하나만 자식으로 가지고 있는 li
+})
+</script>
+</head>
+<body>
+
+<ul>
+ <li><span> 텍스트</span> 텍스트 텍스트 텍스트 텍스트</li>
+ <li>
+  <span> 텍스트</span> 텍스트
+  <span> 텍스트</span>
+   텍스트 텍스트 </li>
+ <li> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+ <li> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+</ul>
+
+</body>
+</html>

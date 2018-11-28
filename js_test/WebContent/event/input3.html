@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+* {
+	font-family: gulim;
+	font-size: 22px;
+}
+</style>
+<Script type="text/javascript">
+	// 폼의 input태그가 입력을 받았는지 검사
+	function check(f) {
+		// f = document.myform
+		if (f.wname.value == "" || f.wname.value.length == 0) {
+			window.alert("이름을 입력해 주십시오.");
+			f.wname.focus();
+			return false;
+		} else if (f.subject.value.length == 0) {
+			window.alert("제목을 입력해 주십시오.");
+			f.subject.focus();
+			return false;
+		} else if (f.wcontent.value == "" || f.wcontent.value.length == 0) {
+			alert("내용을 입력해 주십시오.");
+			f.wcontent.focus();
+			return false;
+		} else {
+			return true;
+		}
+	}
+</Script>
+</head>
+
+<body>
+	<!-- return false: submit 진행 안함, 
+    return true: submit 진행-->
+	<form method='post' action='write_f.jsp' name='frm'
+		onsubmit="return check(this);">
+		<table width="70%" border="0" align="center">
+			<tr>
+				<td height="22" colspan="2">방 명 록</td>
+			</tr>
+			<tr>
+				<td width="20%" height="23">이름</td>
+				<td width="80%"><input type="text" name="wname"></td>
+			</tr>
+			<tr>
+				<td>제목</td>
+				<td><input type="text" name="subject" size=50></td>
+			</tr>
+			<tr>
+				<td>내용</td>
+				<td>
+				 <textarea name="wcontent" cols=54 rows=8></textarea>
+				 </td>
+			</tr>
+			<tr align="center" valign="middle">
+				<td colspan="2">
+					<!-- Image태그는 Submit 기능을 가지고 있음, Submit 버튼과 매우 유사  --> 
+					<input type="image" src="./images/button.jpg" 
+						   width="50px" height="50px">
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+var global = "전역 변수";
+
+function test() {
+	local = "지역변수";
+	
+	var local2 = "진짜 지역변수";
+}
+
+function print() {
+	document.write("global : " + global);
+	document.write("<br>");
+	document.write("local : " + local);
+	document.write("<br>");
+	document.write("local2 : " + local2);
+		// 해당 행에 오류가 있으면 행 전체가 실행되지 않음
+}
+	
+	
+test();
+print();
+</script>
+
+</body>
+</html>

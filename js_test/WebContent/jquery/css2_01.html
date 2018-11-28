@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자식 셀렉터</title>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("li > strong").css("color", "red");
+			// li의 직속 자손태그 중 strong만 color를 red로 변경
+		//$("li strong").css("color", "red");
+			// li의 모든 자손 태그 중 strong인 것의 color를 red로 변경
+	});
+</script>
+</head>
+<body>
+	<ul>
+		<li><strong> 텍스트</strong> 텍스트 텍스트 텍스트 텍스트</li>
+		<li>텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li><div>
+				<strong> 텍스트 </strong> 텍스트 텍스트 텍스트 텍스트 <span> 텍스트 </span>
+					<!-- li가 아닌 div의 직속 자손이기 때문에 변경 안 됨 -->
+			</div></li>
+		<li>텍스트 텍스트 텍스트 텍스트 텍스트</li>
+	</ul>
+</body>
+</html>

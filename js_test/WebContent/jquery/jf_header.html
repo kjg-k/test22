@@ -1,0 +1,33 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$(":header").css("color","red");
+	$("li:contains('샘플')").css("color","blue");
+	$("li:has(strong)").css("color","green");
+	$("li:parent").css("color","yellow");	
+})
+</script>
+</head>
+<body>
+
+<h1> 텍스트 텍스트 텍스트 텍스트 텍스트 </h1>
+<p> 텍스트 텍스트 텍스트 텍스트 텍스트 </p>
+<h6> 텍스트 텍스트 텍스트 텍스트 텍스트 </h6>
+<ul>
+ <li><strong> 텍스트</strong> 텍스트 텍스트 텍스트 텍스트 </li>
+ <li> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+ <li> 샘플 샘플 샘플 샘플 샘플 샘플 </li>
+</ul>
+<ul>
+ <li> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+ <li> 샘플 샘플 샘플 샘플 샘플 샘플 </li>
+ <li></li>
+</ul>
+
+</body>
+</html>

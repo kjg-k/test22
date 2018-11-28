@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+window.onload = function() {
+	document.frm.product[1].checked = true;
+	
+	check(document.frm);
+}
+
+function check(f) {
+	var wonkum, dc, selecedImage = 0;
+	var len = f.product.length;
+	
+	if (f.product[0].checked) {
+		wonkum = 1000000;
+		selectedImage = f.product[0].value;
+	}
+	else if (f.product[1].checked) {
+		wonkum = 700000;
+		selectedImage = f.product[1].value;
+	}
+	else if (f.product[2].checked) {
+		wonkum = 400000;
+		selectedImage = f.product[2].value;
+	}
+	
+	dc = wonkum;
+	
+	if (f.check1.checked) {
+		dc = wonkum - (wonkum * parseFloat(f.check1.value));
+	}
+	else if (f.check2.checked) {
+		dc = wonkum - (wonkum * parseFloat(f.check2.value));
+	}
+	else if (f.check3.checked) {
+		dc = wonkum - (wonkum * parseFloat(f.check3.value));
+	}
+	
+	f.orderval.value = wonkum;
+	f.discount.value = dc;
+	
+	var imgStr = "";
+	
+	if (selectedImage == 1) {
+		imgStr = "<img src='./images/notebook1.jpg'>";
+	}
+	else if (selectedImage == 2) {
+		imgStr = "<img src='./images/notebook2.jpg'>";
+	}
+	else if (selectedImage == 3) {
+		imgStr = "<img src='./images/notebook3.jpg'>";
+	}
+	
+	document.getElementById("panel").innerHTML = imgStr;
+		
+}
+</script>
+
+</head>
+<body>
+
+<h1>노트북</h1>
+
+<div id="panel"></div>
+
+<form name="frm">
+[선택]
+ <input type="radio" name="product" value="1"
+ 		onclick="check(this.form)">고가 제품
+ <input type="radio" name="product" value="2"
+ 		onclick="check(this.form)">중가 제품
+ <input type="radio" name="product" value="3"
+ 		onclick="check(this.form)">저가 제품
+
+ <br>
+ 
+[할인율]
+ <input type="checkbox" name="check1" value="0.1"
+ 		onclick="check(this.form)">우수 고객	
+ <input type="checkbox" name="check2" value="0.05"
+ 		onclick="check(this.form)">장기 고객	
+ <input type="checkbox" name="check3" value="0.5"
+ 		onclick="check(this.form)">국가 유공자	
+ 		
+ <br><br>
+ 
+[선택한 가격]
+ <input type="text" name="orderval">
+[할인된 가격]
+ <input type="text" name="discount">
+</form>
+
+</body>
+</html>

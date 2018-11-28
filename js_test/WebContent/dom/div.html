@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+window.onload = function() {
+	var div1text = document.all.div1.innerText;
+	
+	var div2el = document.getElementById("div2");
+	var div2text = div2el.firstChild.nodeValue;
+	
+	var div3text = (document.getElementById("div3").textContent)?
+			document.getElementById("div3").textContent : 
+			document.getElementById("div3").innerText;
+			
+	alert("div1text : " + div1text + "\r\n" + 
+			"div2text : " + div2text + "\r\n" + 
+			"div3text : " + div3text);
+}
+</script>
+
+</head>
+<body>
+
+<div id="div1">1</div><br>
+<div id="div2">2</div><br>
+<div id="div3">3</div><br>
+<div id="div4">4</div><br>
+<div id="div5">5</div><br>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<script type="text/javascript">
+var student = {
+		이름 : "연하진",
+		국어 : 92, 수학 : 80,
+		영어 : 90, 과학 : 95
+};
+
+var output = "";
+
+with (student) {
+	output += "이름 : " + 이름 + "\n";
+	output += "국어 : " + 국어 + "\n";
+	output += "수학 : " + 수학 + "\n";
+	output += "영어 : " + 영어 + "\n";
+	output += "과학 : " + 과학 + "\n";
+	output += "총점 : " + (국어 + 수학 + 영어 + 과학);
+}
+	// 'student.이름' 대신 with 메소드를 이용하여 처리
+
+alert(output);
+</script>
+
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+function show() {
+	document.getElementById("content").style.display = "";
+}
+
+function hide() {
+	document.getElementById("content").style.display = "none";
+}
+</script>
+
+</head>
+<body>
+
+<div id="content">
+DIV 태그 출력 <br>
+ <img src="http://www.apache.org/images/ac2008us_343x114.jpg"
+ 	  width="300" height="250"> 
+</div>
+
+<input type="button" onclick="show()" value="div 보이기">
+<input type="button" onclick="hide()" value="div 감추기">
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("input").val(" 입력해주세요").css("color","#CCC").focus(function() {
+		$(this).val("").css("color","#000");
+	});
+		// 이렇게 하면 입력을 한 뒤에도 input box를 클릭하면 글이 사라지게 됨 
+})
+</script>
+</head>
+<body>
+
+이름 : <input type="text" value="">
+
+</body>
+</html>

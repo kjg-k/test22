@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+var addressList = ["서울", "인천", "경기도", "강원도"];
+var gugunListSeoul = ["노원구", "강남구", "구로구", "마포구"];
+var gugunListIncheon = ["남동구", "부평구", "서구", "계양구"];
+var gugunListKy = ["부천시", "시흥시", "안양시", "수원시"];
+
+window.onload = function() {
+	var v_sidoSelect = document.getElementById("sidoSelect");
+	var btnArea = document.getElementById("btnArea");
+	
+	for (i=0; i<addressList.length; i++) {
+		var optionEl = document.createElement("option");
+		
+		optionEl.value = addressList[i];		
+		optionEl.appendChild(document.createTextNode(addressList[i]));
+		v_sidoSelect.appendChild(optionEl);
+	}
+	
+	var v_gugunSelect = document.getElementById("gugunSelect");
+	v_gugunSelect.style.display = "none";
+	btnArea.style.display = "none";
+}
+
+function changeSidoSelect() {
+	var v_sidoSelect = document.getElementById("sidoSelect");
+	var idx = v_sidoSelect.options.selectedIndex;	// 0부터 시작
+	var area = document.getElementById("area");
+	
+	area.value = "";
+	gugunSelectFill(idx);
+}
+
+function gugunSelectFill(idx) {
+	var v_gugunSelect = document.getElementById("gugunSelect");
+	var btnArea = document.getElementById("btnArea");
+	var data = null;
+	
+	if (idx == 0) {
+		v_gugunSelect.style.display = "none";
+		btnArea.style.display = "none";
+		
+		return;
+	}
+	
+	if (idx == 1) {
+		data = gugunListSeoul;
+	}
+	if (idx == 2) {
+		data = gugunListIncheon;
+	}
+	if (idx == 3) {
+		data = gugunListKy;
+	}
+	
+	if (idx == 4) {
+		v_gugunSelect.style.disply = "none";
+		alert("현재는 지원하지 않습니다.");
+		
+		return;
+	}
+	
+	v_gugunSelect.innerHTML = "";
+		// 이전에 선택했었던 중분류쪽 option 초기화
+	
+	for (i=0; i<data.length; i++) {
+		var optionEl = document.createElement("option");
+		
+		optionEl.value = data[i];
+		optionEl.appendChild(document.createTextNode(data[i]));
+		v_gugunSelect.appendChild(optionEl);
+	}
+	
+	v_gugunSelect.style.display = "";
+	btnArea.style.display = "";
+		// 중분류랑 버튼 다시 보이게끔
+} 
+
+function getArea() {
+	var area = document.getElementById("area");
+	var sidoSelect = document.getElementById("sidoSelect");
+	var gugunSelect = document.getElementById("gugunSelect");
+	
+	alert(sidoSelect.value + " " + gugunSelect.value);
+	area.value = sidoSelect.value + " " + gugunSelect.value;
+}
+</script>
+
+</head>
+<body>
+
+<div id="sido">
+ <select id="sidoSelect" onchange="changeSidoSelect()">
+  <option>대분류를 선택하세요.</option>
+ </select>
+ <select id="gugunSelect">
+  <option>중분류를 선택하세요.</option>
+ </select> 
+
+ <label>
+  <input type="button" id="btnArea" name="btnArea"
+ 	     value="선택" onclick="getArea()">선택한 지역:
+  <input type="text" id="area" size="40"> 	 
+ </label>
+</div>
+
+</body>
+</html>

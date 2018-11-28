@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>인접 셀렉터</title>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#second + li").css("color", "red");	
+			// id가 second인 태그의 인접 태그에 css적용
+			// second에는 적용 안 됨
+	});
+</script>
+</head>
+<body>
+	<ul>
+		<li id="first">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li id="second">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li id="third">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li id="fourth">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+
+	</ul>
+</body>
+</html>

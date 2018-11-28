@@ -1,0 +1,35 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("button").toggle(
+		// 버튼을 누를때마다 토글 함수 내의 값들을 실행 (구분자 ",")
+		function() {
+			$("img").attr("src","images/sea.jpg");
+		},
+		function() {
+			$("img").attr("src","images/Jellyfish.jpg");
+		},
+		function() {
+			$("img").attr("src","images/building.jpg");
+		},
+		function() {
+			$("img").attr("src","images/flower.jpg");
+		}
+			// <a>로 링크 이동하는 것이 아니기 때문에 return false 필요 X
+	);
+});
+</script>
+</head>
+<body>
+
+<button>화면을 변경</button>
+ 
+<p><img src="images/flower.jpg" alt="꽃" /></p>
+
+</body>
+</html>

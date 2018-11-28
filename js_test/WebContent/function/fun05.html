@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="./utility.js"></script>
+
+</head>
+<body>
+
+<h2>escape와 unescape</h2>
+
+<script type="text/javascript">
+var temp1, temp2;
+
+pl("원본 : " + "123-ABC-abc-미합중국/러시아/중국-!?#$%");
+pl();
+
+temp1 = escape("123-ABC-abc-미합중국/러시아/중국-!?#$%");
+	// 숫자, 영문자를 제외한 문자열을 인코딩(암호화)
+temp2 = unescape(temp1);
+	// 인코딩된 문자열을 다시 디코딩(복호화)
+
+pl("escape : " + temp1);
+pl();
+p("unescape : " + temp2);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+function imgShow() {
+	var img = document.createElement("img");
+	
+	img.src = "http://www.apache.org/images/ac2008us_343x114.jpg";
+	
+	var holder = document.getElementById("imgPlaceHolder");
+	
+	holder.appendChild(img);
+}
+</script>
+
+</head>
+<body>
+
+<input type="button" onclick="imgShow()" value="이미지 표시">
+
+<div id="imgPlaceHolder"></div>
+
+</body>
+</html>

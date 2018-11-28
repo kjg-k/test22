@@ -1,0 +1,36 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<style type="text/css">
+p {
+	color: red
+}
+</style>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("strong:first").prependTo("p");
+		// 첫 번째 strong을 찾아서 p태그 내부의 맨 앞으로
+	$("strong:last").appendTo("p");
+		// 마지막 strong을 찾아서 p태그 내부의 맨 뒤로
+	$("h1:first").insertBefore("p");
+		// 첫 번째 h1을 찾아서 p태그 앞으로
+	$("h1:last").insertAfter("p");
+		// 마지막 h1을 찾아서 p태그 뒤로
+})
+</script>
+</head>
+<body>
+
+<p> 텍스트 텍스트 </p>
+ 
+<strong> 앞으로 문자</strong>
+<strong> 뒤로 이동</strong>
+ 
+<h1>태그도 앞으로 이동</h1>
+<h1>태그도 뒤로 이동</h1>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("li:lt(2)").css("color","red");
+		// 인덱스가 2보다 작은 li
+	$("li:eq(2)").css("color","blue");
+		// 인덱스가 2인 li(0번부터 시작)
+	$("li:gt(2)").css("color","green");
+		// 인덱스가 2보다 큰 li
+	
+})
+</script>
+</head>
+<body>
+
+<ul>
+ <li> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+ <li> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+ <li> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+ <li> 텍스트 텍스트 텍스트 텍스트 텍스트 </li> 
+</ul>
+
+</body>
+</html>

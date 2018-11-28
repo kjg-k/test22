@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="./httpRequest.js"></script>
+<script type="text/javascript">
+function ecd(field) {
+	return encodeURIComponent(field.value);
+}
+
+function send(f) {
+	var params = "stuname=" + ecd(f.stuname);
+	params += "&address=" + ecd(f.address);
+	params += "&subject=" + ecd(f.subject);
+	params += "&score=" + f.score.value;
+	params += "&subject2=" + ecd(f.subject2);
+	params += "&score2=" + f.score2.value;
+	
+	var panel = document.getElementById("displayPanel");
+	panel.innerHTML = "";
+	
+	sendRequest("./proc.jsp", params, response, "post");
+}
+
+function response() {
+	if (httpRequest.readyState == 4) {
+		if (httpRequest.status == 200) {
+			var panel = document.getElementById("displayPanel");
+			panel.innerHTML = httpRequest.responseText;
+		}
+	}
+}
+</script>
+
+</head>
+<body>
+
+<table width="500" height="200" align="center" border="2">
+ <tr>
+  <td>
+   <div align="center">성적 처리</div>
+   <form name="frmSungjuk">
+   성명 : <input type="text" name="stuname" value="가길동"><br>
+   주소 : <input type="text" name="address" value="인천시 남동구"><br>
+   과목 : <input type="text" name="subject" value="JAVA"><br>
+   점수 : <input type="text" name="score" value="95"><br>
+   과목2 : <input type="text" name="subject2" value="JSP"><br>
+   점수2 : <input type="text" name="score2" value="80"><br>
+    <div align="center">
+     <input type="button" value="성적 계산"
+     		onclick="send(this.form)">
+    </div>
+   </form>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <br>
+   <div id="displayPanel"></div>
+  </td>
+ </tr>   
+</table>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<p>test1</p>
+
+<p class="intro">test2</p>
+<p class="intro">test3</p>
+
+<p id="demo"></p>
+
+<script type="text/javascript">
+var x = document.querySelectorAll("p.intro");
+	// 결국 결과는 배열값으로 받음
+
+document.getElementById("demo").innerHTML = 
+	"index(0) with class 'intro' = " + x[0].innerHTML; 
+</script>
+
+</body>
+</html>

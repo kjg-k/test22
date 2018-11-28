@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<script type="text/javascript" src="./utility.js"></script>
+
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+var DTOlist = "가길동, 100, 90/ 나길동, 100, 90/ 다길동, 100, 90";
+
+var arrayDTO = DTOlist.split("/");
+	// split은 구분자(여기선 "/")로 구분하며,
+	// 첫 구분자가 나올때까지의 모든 문자열을 첫번째 배열방에 넣고,
+	// 첫 구분자와 공백을 제외하고 그 후의 첫 문자부터 다음 구분자까지의
+	// 모든 문자열을 두번째 배열방에 넣음. 계속 이렇게 진행
+	// split()의 리턴형은 배열
+	// 따라서 arrayDTO는 배열형임
+
+for (var i=0; i<arrayDTO.length; i++) {
+	pl(arrayDTO[i]);
+}
+
+pl("<hr>");
+pl("성적 계산 목록");
+pl();
+
+for (i=0; i<arrayDTO.length; i++) {
+	var dto = arrayDTO[i];
+	var str = dto.split(",");
+	
+	pl("성명 : " + str[0]);
+	pl("영어 : " + str[1]);
+	pl("수학 : " + str[2]);
+	
+	var eng = parseInt(str[1]);
+	var math = parseInt(str[2]);
+
+	pl("총점 : " + (eng+math));
+	pl("평균 : " + (eng+math)/2);
+	pl("-------------------------------");
+}
+
+</script>
+
+</body>
+</html>

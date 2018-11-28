@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<p id="demo"></p>
+
+<button onclick="getLocation()">Try</button>
+
+<script type="text/javascript">
+var x = document.getElementById("demo");
+
+function getLocation() {
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(showPosition, showError);
+	}
+	else {
+		x.innerHTML = "Geolocation is not supported";
+	}	
+}
+
+function showPosition(position) {
+	x.innerHTML = "Latitude : " + position.coords.latitude +
+				"<br>Longitude : " + position.coords.longitude;
+}
+
+function showError(error) {
+	switch(error.code) {
+	 	case error.PERMISSION_DENIED:
+	      x.innerHTML="사용자가 지리적 위치에게 허용하지 않았다."
+	      break;
+	    case error.POSITION_UNAVAILABLE:
+	      x.innerHTML="위치 정보를 사용할 수 없습니다."
+	      break;
+	    case error.TIMEOUT:
+	      x.innerHTML="작업 시간이 초과되었습니다."
+	      break;
+	    case error.UNKNOWN_ERROR:
+	      x.innerHTML="An unknown error occurred."
+	      break;
+	}
+}
+</script>
+
+</body>
+</html>

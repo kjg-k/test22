@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+var i = 1;
+
+function add() {
+	var parentDiv = document.getElementById("fileHolder");
+	var childDiv = document.createElement("div");
+	var childInput = document.createElement("input");
+	childInput.type = "file";
+	
+	childDiv.appendChild(document.createTextNode("파일 선택 " + i + ": "));
+	childDiv.appendChild(childInput);
+	
+	parentDiv.appendChild(childDiv);
+	
+	i++;
+}
+
+function del() {
+	var parentDiv = document.getElementById("fileHolder");
+	var childDiv = parentDiv.lastChild;
+	
+	if (childDiv) {
+		parentDiv.removeChild(childDiv);
+		i--;
+	}
+	
+}
+</script>
+
+</head>
+<body>
+
+<input type="button" name="btnAdd" value="파일 선택 추가"
+		onclick="add()">
+<input type="button" name="btnDel" value="파일 선택 제거"
+		onclick="del()">
+<br/>
+
+<DIV id="fileHolder"></DIV>
+
+</body>
+</html>

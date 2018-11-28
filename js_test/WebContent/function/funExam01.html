@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<script type="text/javascript" src="./utility.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+pl(Math.round(3.4595));
+pl(Math.round(3.5595));
+
+p("<hr>");
+
+var digits = Math.pow(10,1);
+var t = Math.round(3.5595 * digits);
+
+pl(t/digits);
+
+digits = Math.pow(10,2);
+t = Math.round(3.5595 * digits);
+
+pl(t/digits);
+</script>
+
+</body>
+</html>

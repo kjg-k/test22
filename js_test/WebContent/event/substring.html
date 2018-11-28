@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css"> 
+*{ 
+  font-family: gulim; 
+  font-size: 22px; 
+} 
+</style>
+</head>
+<body>
+<h1>
+<script type="text/javascript">
+    var str = '123ABC 가나다/가나다';
+    document.write(str + '<br>');
+ 
+    // '123'만 추출하세요.
+    // substring(start index, end index)
+    document.write(str.substring(0, 3) + '<br>');
+ 
+    // 'ABC'만 추출하세요.
+    document.write(str.substring(3, 6) + '<br>');
+ 
+    // '가나다/가나다'만 추출하세요.
+    // substring(start index)
+    document.write(str.substring(7) + '<br>');
+ 
+    // '가나다' 문자열이 마지막으로 나나탄 위치는?
+    document.write(str.lastIndexOf('가나다') + '<br>');
+ 
+</script>
+</h1>
+</body>
+</html>

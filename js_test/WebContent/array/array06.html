@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<button onclick="remove()">제거</button>
+<button onclick="add()">추가</button>
+
+<p id="demo"></p>
+
+<script type="text/javascript">
+var alpa = ["a", "b", "c", "d"];
+document.getElementById("demo").innerHTML = alpa;
+
+function remove() {
+	document.getElementById("demo").innerHTML = alpa.pop();
+}
+function add() {
+	document.getElementById("demo").innerHTML = alpa.push("e");
+}
+</script>
+
+
+</body>
+</html>

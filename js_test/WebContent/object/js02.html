@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+var product = {
+		name: "microsoft",
+		price: "15,000,000원",
+		language: "한국어",
+		supportOS: "win 32/64",
+		subscription: true
+};
+
+var output = "";
+
+for (var key in product) {
+	// in 다음 객체(배열)명을 명시
+	output += "●" + key + ": " + product[key] + "\n";
+	//output += "●" + key + ": " + product.key + "\n";
+		// key는 문자열 "name", ... ??
+}
+
+alert(output);
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

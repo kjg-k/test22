@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+* {
+font-family: gulim;
+font-size: 22px;
+}
+</style>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+  function makeTable(){
+     var divTag = document.getElementById("panel");
+     var row = document.getElementById("row").value;
+     var col = document.getElementById("col").value;
+     
+     var str = "<table border='1'>";
+     
+     for (var i=0; i<row; i++) {
+    	 str += "<tr>";
+    		 
+    	 for (var j=0; j<col; j++) {
+    		 str += "<td>*</td>";
+    	 }
+    	 
+    	 str += "</tr>";
+     }
+     
+     divTag.innerHTML = str;
+  }
+  
+  function check(f) {
+	 var row = f.row.value;
+	 var col = f.col.value;
+	  
+	 if (isFinite(row) == false) {
+ 		alert("입력 가능한 값은 숫자 뿐입니다.<br>다시 입력하세요.");
+ 		f.row.focus();
+	 }
+	 else if (row < 3 || row > 10 ){
+		alert("입력 가능한 값의 범위를 벗어났습니다.<br>3 ~ 10 사이의 숫자만 입력해주세요.");
+ 		f.row.focus();
+	 }
+	 else if (isFinite(col) == false) {
+	 	alert("입력 가능한 값은 숫자 뿐입니다.<br>다시 입력하세요.");
+ 		f.col.focus();
+	 }
+	 else if (col < 3 || col > 10 ){
+		alert("입력 가능한 값의 범위를 벗어났습니다.<br>3 ~ 10 사이의 숫자만 입력해주세요.");
+ 		f.col.focus();
+	 }	 
+	 else {
+		makeTable();
+	 }
+	 
+  }
+</SCRIPT>
+</HEAD>
+ 
+<BODY>
+<FORM name="frm" method="post">
+행의수 : <Input type="text" name="row" id="row" value="5" size="20"><br>
+열의수 : <Input type="text" name="col" id="col" value="5" size="20"><br><br>
+ <input type="button" value="표 만들기" onclick="check(this.form)">
+</FORM>
+
+<br>
+ 
+<DIV id='panel'></DIV>
+ 
+</BODY>
+</HTML>

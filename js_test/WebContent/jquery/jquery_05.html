@@ -1,0 +1,35 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("strong").wrap("<h1></h1>");
+		// strong을 각각 h1으로 감쌈
+	$("div").wrapAll("<h2></h2>");
+		// 모든 div를 한번에 h1으로 감쌈
+		// 만약 div가 따로따로 떨어져 있다면 브라우저에
+		// 출력 시에는 한 곳에 묶여서 출력됨
+	$("p").wrapInner("<strong></strong>");
+		// p의 내부의 것들을 strong으로 감쌈
+})
+</script>
+</head>
+<body>
+
+<strong> 텍스트텍스트111 </strong>
+<strong> 텍스트텍스트222 </strong>
+ 
+<div> 텍스트텍스트111 </div>
+<div> 텍스트텍스트222 </div>
+<div> 텍스트텍스트333 </div>
+ 
+ 
+<p> 텍스트텍스트 </p>
+<p> 텍스트텍스트 </p>
+
+<div>test</div>
+</body>
+</html>

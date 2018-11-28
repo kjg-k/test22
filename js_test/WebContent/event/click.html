@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+function sendit() {
+	str = document.getElementById("url").value;
+	alert("입력한 주소명 : " + str);
+	
+	if (str == "") {
+		alert("주소를 입력해주세요");
+		document.frm.url.focus();
+	}
+	else {
+		if (str.indexOf("http://") == -1) {
+			str = "http://" + str;
+		}
+			
+		location.href = str;
+	}
+}
+ 
+function pre(n) {
+	var url;
+	
+	switch(n) {
+		case 1:
+			url = "www.daum.net";
+			break;
+		case 2:
+			url = "www.kma.go.kr";
+			break;
+		case 3:
+			url = "www.kyobobook.co.kr";
+			break;		
+	}
+	
+	document.frm.url.value = url;
+	//document.getElementById("url").value = url;
+}
+</script>
+
+</head>
+<body>
+
+<form name="frm" method="post">
+ <input type="text" id="url" name="url" size="50">
+ <a href="javascript:sendit();">주소 이동</a>
+ <input type="button" value="주소 이동" onclick="sendit()">
+ <br><br>
+<div>
+미리버튼
+ <input type="button" value="DAUM" onclick="pre(1)">
+ <input type="button" value="기상청" onclick="pre(2)">
+ <input type="button" value="교보문고" onclick="pre(3)">
+</div>
+</form>
+
+</body>
+</html>

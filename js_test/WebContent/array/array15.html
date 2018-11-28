@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+ 
+<button onclick="myFunction()">Try it</button>
+ 
+<p id="demo"></p>
+ 
+<script>
+var fruits = [1, 8, 5, 4];
+document.getElementById("demo").innerHTML = fruits;
+ 
+function myFunction() {//숫자인경우의 오름차순 sort
+	//fruits.sort();
+    fruits.sort(function(a,b){return a-b});//내림차순 b-a
+    document.getElementById("demo").innerHTML = fruits;
+}
+</script>
+ 
+</body>
+</html>

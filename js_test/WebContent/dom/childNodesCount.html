@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+window.onload = function() {
+	var count = 0;
+	
+	var divel = document.getElementById("divHolder");
+	
+	for (i=0; i<divel.childNodes.length; i++){
+		if (divel.childNodes[i].nodeType == 1) {
+			count++;
+		}
+	}
+	
+	alert("divHolder div의 자식노드의 개수는 : " + divel.childNodes.length);
+	alert("자식 엘레멘트(태그) 노드의 개수는 : " + count);
+}
+</script>
+
+</head>
+<body>
+
+<div id="divHolder"><div></div>
+<div></div>
+</div>
+
+</body>
+</html>

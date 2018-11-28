@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="myFunction()">Try it</button>
+ 
+<p id="demo"></p>
+ 
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits;
+ 
+function myFunction() {
+    fruits.sort();
+    //fruits.sort(function(a,b){return a-b});
+    	// 이건 숫자일때만 사용 가능
+    document.getElementById("demo").innerHTML = fruits;
+}
+</script>
+ 
+</body>
+</html>
